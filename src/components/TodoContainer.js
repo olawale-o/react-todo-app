@@ -25,7 +25,6 @@ class TodoContainer extends React.Component {
         },
       ],
     };
-    // this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange = (id) => {
@@ -42,12 +41,20 @@ class TodoContainer extends React.Component {
     }));
   };
 
+  delTodo = (id) => {
+    console.log('deleted', id);
+  };
+
   render() {
     const { todos } = this.state;
     return (
       <div>
         <Header />
-        <TodosList todos={todos} handleChangeProps={this.handleChange} />
+        <TodosList
+          todos={todos}
+          handleChangeProps={this.handleChange}
+          deleteTodoProps={this.delTodo}
+        />
       </div>
     );
   }
