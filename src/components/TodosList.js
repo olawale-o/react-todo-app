@@ -13,7 +13,9 @@ class TodosList extends React.Component {
     const { todos } = this.props;
     return (
       <ul>
-        <TodoItem key={todo.id} todo={todo} />
+        {todos.map((todo) => (
+          <TodoItem key={todo.id} todo={todo} />
+        ))}
       </ul>
     );
   }
