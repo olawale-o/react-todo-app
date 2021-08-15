@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 
 function TodoItem(props) {
   const { todo } = props;
-  return <li>{todo.title}</li>;
+  return (
+    <li>
+      <input type="checkbox" />
+      {todo.title}
+    </li>
+  );
 }
 
 export default TodoItem;
