@@ -1,5 +1,4 @@
 import React from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import TodosList from './TodosList';
 import Header from './Header';
 import InputTodo from './InputTodo';
@@ -11,17 +10,17 @@ class TodoContainer extends React.Component {
     this.state = {
       todos: [
         {
-          id: uuidv4(),
+          id: Math.floor(Math.random() * 100),
           title: 'Setup development environment',
           completed: true,
         },
         {
-          id: uuidv4(),
+          id: Math.floor(Math.random() * 100),
           title: 'Develop website and add content',
           completed: false,
         },
         {
-          id: uuidv4(),
+          id: Math.floor(Math.random() * 100),
           title: 'Deploy to live server',
           completed: false,
         },
@@ -55,7 +54,7 @@ class TodoContainer extends React.Component {
   addTodoItem = (title) => {
     const { todos } = this.state;
     const newTodo = {
-      id: 4,
+      id: Math.floor(Math.random() * 100),
       title,
       completed: false,
     };

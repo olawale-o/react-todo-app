@@ -17,13 +17,17 @@ class InputTodo extends Component {
   };
 
   handleSubmit = (e) => {
-    e.preventDefault();
     const { title } = this.state;
-    const { addTodoProps } = this.props;
-    addTodoProps(title);
-    this.setState({
-      title: '',
-    });
+    e.preventDefault();
+    if (title.trim()) {
+      const { addTodoProps } = this.props;
+      addTodoProps(title);
+      this.setState({
+        title: '',
+      });
+    } else {
+      alert('Please write an item');
+    }
   };
 
   render() {
