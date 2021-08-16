@@ -6,6 +6,10 @@
 - CSS
 - React JS
 
+# Screenshot
+![screenshot](https://github.com/olawale-o/react-todo-app/blob/guide/src/assets/screenshot.png?raw=true")
+
+
 # Demo Link
 visit [Link](https://olawale-o.github.io/react-todo-app/#/)
 # Getting started
