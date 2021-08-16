@@ -2,6 +2,7 @@
   "name": "react-todo-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://olawale-o.github.io/repository-name",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -22,7 +23,9 @@
     "eject": "react-scripts eject",
     "stylelint": "stylelint \"**/*.{css,scss}\"",
     "eslint": "eslint .",
-    "lint": "npm run stylelint && npm run eslint"
+    "lint": "npm run stylelint && npm run eslint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
