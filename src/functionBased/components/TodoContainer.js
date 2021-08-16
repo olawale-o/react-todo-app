@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import Header from './Header';
 import InputTodo from './InputTodo';
 import TodosList from './TodosList';
+import About from '../pages/About';
+import NotMatch from '../pages/NotMatch';
 
 const TodoContainer = () => {
   const [todos, setTodos] = useState([]);
@@ -63,18 +66,20 @@ const TodoContainer = () => {
   }, [todos]);
 
   return (
-    <div className="container">
-      <div className="inner">
-        <Header />
-        <InputTodo addTodoProps={addTodoItem} />
-        <TodosList
-          todos={todos}
-          handleChangeProps={handleChange}
-          deleteTodoProps={delTodo}
-          setUpdate={setUpdate}
-        />
+    <Route path='/' exact>
+      <div className="container">
+        <div className="inner">
+          <Header />
+          <InputTodo addTodoProps={addTodoItem} />
+          <TodosList
+            todos={todos}
+            handleChangeProps={handleChange}
+            deleteTodoProps={delTodo}
+            setUpdate={setUpdate}
+          />
+        </div>
       </div>
-    </div>
+    </Route>
   );
 };
 
