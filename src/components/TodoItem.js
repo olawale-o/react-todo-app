@@ -15,6 +15,12 @@ class TodoItem extends React.Component {
     });
   }
 
+  handleUpdatedDone = (event) => {
+    if (event.key === 'Enter') {
+      this.setState({ editing: false });
+    }
+  }
+
   render() {
     const completedStyle = {
       fontStyle: 'italic',
@@ -47,6 +53,7 @@ class TodoItem extends React.Component {
           onChange={(e) => {
             setUpdate(e.target.value, todo.id);
           }}
+          onKeyDown={this.handleUpdatedDone}
         />
         <input
           type="checkbox"
