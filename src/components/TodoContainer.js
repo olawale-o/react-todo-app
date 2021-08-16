@@ -8,24 +8,14 @@ class TodoContainer extends React.Component {
     super(props);
     this.props = props;
     this.state = {
-      todos: [
-        {
-          id: Math.floor(Math.random() * 100),
-          title: 'Setup development environment',
-          completed: true,
-        },
-        {
-          id: Math.floor(Math.random() * 100),
-          title: 'Develop website and add content',
-          completed: false,
-        },
-        {
-          id: Math.floor(Math.random() * 100),
-          title: 'Deploy to live server',
-          completed: false,
-        },
-      ],
+      todos: [],
     };
+  }
+
+  componentDidMount() {
+    fetch('https://jsonplaceholder.typicode.com/todos?_limit=10')
+      .then((response) => response.json())
+      .then((data) => this.setState({ todos: data }));
   }
 
   handleChange = (id) => {
@@ -70,7 +60,6 @@ class TodoContainer extends React.Component {
         const currentTodo = todo;
         if (todo.id === id) {
           currentTodo.title = updatedTitle;
-          // todo.title = updatedTitle;
         }
         return todo;
       }),
